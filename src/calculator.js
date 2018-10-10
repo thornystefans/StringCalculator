@@ -10,13 +10,7 @@ function add(numbers) {
 		var numberArray = numbers.split(/[,\n]/);
 		
 		var valSize = [];
-		j = 0;
-		for(var i = 0; i < numberArray.length; i++) {
-			if(parseInt(numberArray[i]) <= 1000) {
-				valSize[j] = parseInt(numberArray[i]);
-				j++;
-			}
-		}
+		valSize = validateSize(numberArray, valSize);
 
 		if(checkNegatives(valSize) == false) {
 			return sum(valSize);
@@ -29,6 +23,17 @@ function add(numbers) {
 		}
 		return parseInt(numbers);
 	}
+}
+
+function validateSize(numberArray, valSize) {
+	j = 0;
+	for(var i = 0; i < numberArray.length; i++) {
+		if(parseInt(numberArray[i]) <= 1000) {
+			valSize[j] = parseInt(numberArray[i]);
+			j++;
+		}
+	}
+	return valSize;
 }
 
 // Checking if there are any negative numbers
