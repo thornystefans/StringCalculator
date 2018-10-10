@@ -9,8 +9,12 @@ function add(numbers) {
 		var numberArray = numbers.split(/[,\n]/);
 		return sum(numberArray);
 	}
-
-	return parseInt(numbers);
+	else {
+		if(parseInt(numbers) < 0) {
+			throw new Error("Negatives not allowed: " + numbers);
+		}
+		return parseInt(numbers);
+	}
 }
 
 // Calculates the sum of all given numbers
