@@ -8,18 +8,10 @@ function add(numbers) {
 	if(numbers.includes(",") || numbers.includes("\n")) {
 		
 		var numberArray = numbers.split(/[,\n]/);
-		var negativeArray = [];
-		j = 0;
-		for(var i = 0; i < numberArray.length; i++) {
-			if(parseInt(numberArray[i]) < 0) {
-				negativeArray[j] = parseInt(numberArray[i]);
-				j++;
-			}
+		
+		if(checkNegatives(numberArray) == false) {
+			return sum(numberArray);
 		}
-		if(negativeArray.length > 0) {
-			throw new Error("Negatives not allowed: " + negativeArray.map(Number));
-		}
-		return sum(numberArray);
 	}
 	else {
 		// If a number is negative, an exception is thrown
@@ -28,6 +20,21 @@ function add(numbers) {
 		}
 		return parseInt(numbers);
 	}
+}
+
+function checkNegatives(numberArray) {
+	var negativeArray = [];
+	j = 0;
+	for(var i = 0; i < numberArray.length; i++) {
+		if(parseInt(numberArray[i]) < 0) {
+			negativeArray[j] = parseInt(numberArray[i]);
+			j++;
+		}
+	}
+	if(negativeArray.length > 0) {
+		throw new Error("Negatives not allowed: " + negativeArray.map(Number));
+	}
+	return false;
 }
 
 // Calculates the sum of all given numbers
