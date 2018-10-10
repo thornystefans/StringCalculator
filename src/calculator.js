@@ -28,9 +28,11 @@ function add(numbers) {
 	}
 }
 
+// Ignores all numbers bigger than 1000
 function validateSize(numberArray, valSize) {
 	j = 0;
 	for(var i = 0; i < numberArray.length; i++) {
+		// Add all numbers less or equal than 1000 to an array
 		if(parseInt(numberArray[i]) <= 1000) {
 			valSize[j] = parseInt(numberArray[i]);
 			j++;
