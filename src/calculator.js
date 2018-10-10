@@ -9,8 +9,17 @@ function add(numbers) {
 		
 		var numberArray = numbers.split(/[,\n]/);
 		
-		if(checkNegatives(numberArray) == false) {
-			return sum(numberArray);
+		var valSize = [];
+		j = 0;
+		for(var i = 0; i < numberArray.length; i++) {
+			if(parseInt(numberArray[i]) <= 1000) {
+				valSize[j] = parseInt(numberArray[i]);
+				j++;
+			}
+		}
+
+		if(checkNegatives(valSize) == false) {
+			return sum(valSize);
 		}
 	}
 	else {
