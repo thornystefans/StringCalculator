@@ -46,3 +46,7 @@ it("should ignore numbers bigger than 1000", () => {
 	expect(add("1001")).toBe(0);
 });
 
+it("should allow new delimiter and return the sum of given numbers", () => {
+	expect(add("//q\n1q2q3q")).toBe(6);
+});
+
