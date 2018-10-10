@@ -30,3 +30,11 @@ it("should throw exception if number is negative", () => {
 	}
 	expect(addNegative).toThrowError("Negatives not allowed: -1");
 });
+
+it("should throw exception if number is negative", () => {
+	function addNegative() {
+		add("2,-4,3,-5");
+	}
+	expect(addNegative).toThrowError("Negatives not allowed: -4,-5");
+});
+
