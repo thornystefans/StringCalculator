@@ -10,6 +10,7 @@ function add(numbers) {
 		return sum(numberArray);
 	}
 	else {
+		// If a number is negative, an exception is thrown
 		if(parseInt(numbers) < 0) {
 			throw new Error("Negatives not allowed: " + numbers);
 		}
