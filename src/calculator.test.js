@@ -42,3 +42,7 @@ it("should ignore numbers bigger than 1000", () => {
 	expect(add("1001,2")).toBe(2);
 });
 
+it("should ignore numbers bigger than 1000", () => {
+	expect(add("1001")).toBe(0);
+});
+

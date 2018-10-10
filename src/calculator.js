@@ -21,6 +21,9 @@ function add(numbers) {
 		if(parseInt(numbers) < 0) {
 			throw new Error("Negatives not allowed: " + numbers);
 		}
+		else if(parseInt(numbers) > 1000) {
+			return 0;
+		}
 		return parseInt(numbers);
 	}
 }
