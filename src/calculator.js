@@ -22,15 +22,18 @@ function add(numbers) {
 	}
 }
 
+// Checking if there are any negative numbers
 function checkNegatives(numberArray) {
 	var negativeArray = [];
 	j = 0;
 	for(var i = 0; i < numberArray.length; i++) {
 		if(parseInt(numberArray[i]) < 0) {
+			// Adding all negative numbers to an array
 			negativeArray[j] = parseInt(numberArray[i]);
 			j++;
 		}
 	}
+	// If there is anything in the array, an exception is thrown
 	if(negativeArray.length > 0) {
 		throw new Error("Negatives not allowed: " + negativeArray.map(Number));
 	}
