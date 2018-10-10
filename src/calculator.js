@@ -5,9 +5,14 @@ function add(numbers) {
 	}
 
 	var numberArray = [];
+	// Checks if there is a custom delimiter
 	if(numbers.charAt(0) == "/" && numbers.charAt(1) == "/") {
+		// Creates a variable of the third character of the string
+		// representing the delimiter
 		var delimiter = numbers.charAt(2);
+		// Slices off the first three characters, leaves the rest in the string
 		var numbers = numbers.slice(4, numbers.length);
+		// Splits on the custom delimiter as well as on "," and "\n"
 		numberArray = numbers.split(delimiter).join(/[,\n]/);
 	}
 
@@ -15,6 +20,7 @@ function add(numbers) {
 	else if(numbers.includes(",") || numbers.includes("\n")) {
 		numberArray = numbers.split(/[,\n]/);	
 	}
+	// Case for a single number
 	else {
 		// If a number is negative, an exception is thrown
 		if(parseInt(numbers) < 0) {
@@ -24,7 +30,6 @@ function add(numbers) {
 			return 0;
 		}
 		return parseInt(numbers);
-
 	}
 	var valSize = [];
 	valSize = validateSize(numberArray, valSize);
