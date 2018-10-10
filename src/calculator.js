@@ -8,7 +8,7 @@ function add(numbers) {
 	if(numbers.charAt(0) == "/" && numbers.charAt(1) == "/") {
 		var delimiter = numbers.charAt(2);
 		var numbers = numbers.slice(4, numbers.length);
-		numberArray = numbers.split(delimiter);
+		numberArray = numbers.split(delimiter).join(/[,\n]/);
 	}
 
 	// Checks if the string includes either comma(s) or new line(s)
