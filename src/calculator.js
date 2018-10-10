@@ -1,15 +1,15 @@
-function add(number) {
+function add(numbers) {
 
-	if(number == "") {
+	if(numbers == "") {
 		return 0;
 	}
 
-	if(number.includes(",")) {
-		var numberArray = number.split(",");
+	if(numbers.includes(",")) {
+		var numberArray = numbers.split(",");
 		return parseInt(numberArray[0]) + parseInt(numberArray[1]);
 	}
 
-	return parseInt(number);
+	return parseInt(numbers);
 }
 
 module.exports = add;
